@@ -81,6 +81,7 @@ import Signup from '../../views/Signup/Signup';
 import Ranking from '../../views/Ranking/Ranking';
 import Login from '../../views/Login/Login'
 import CreateThread from '../../views/Threads/CreateThread';
+import UserProfile from '../../views/UserProfile/UserProfile';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../config/firebase-config';
 
@@ -97,7 +98,7 @@ const AppRouter = () => {
       <Route path="/ranking" element={<Ranking><Sidebar /></Ranking>} />
       <Route path="/login" element={<Login><Sidebar /></Login>} />
       <Route path="/signup" element={<Signup />} />
-      <Route path="/profile" element={<Profile><Sidebar /></Profile>} />
+      <Route path="/UserProfile" element={<Profile><Sidebar /></Profile>} />
       <Route path="/create-thread" element={<PrivateRoute element={<CreateThread />} />} />
     </Routes>
   );
