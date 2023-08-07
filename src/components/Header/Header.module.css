@@ -1,0 +1,43 @@
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+  box-shadow: 0px 8px 5px -3px rgba(0, 0, 0, 0.1);
+}
+
+.Header__logo {
+  height: 100%;
+}
+
+.Header__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 20%);
+}
+
+.Header__search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  height: 100%;
+}
+
+.Header__input {
+  border: none;
+  background-color: transparent;
+  font-size: 15px;
+  padding: 10px;
+}
+
+.Header__input:focus {
+  outline: none;
+}
+
+.Header__pages {
+  display: inherit;
+  gap: 1rem;
+  height: 100%;
+}
