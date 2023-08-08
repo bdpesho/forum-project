@@ -31,7 +31,7 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li className={cl.menu__item}>
-              <NavLink to="/UserProfile">
+              <NavLink to="/Profile">
                 <FaUserAstronaut />
               </NavLink>
             </li>

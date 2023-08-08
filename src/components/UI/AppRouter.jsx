@@ -98,7 +98,7 @@ const AppRouter = () => {
       <Route path="/ranking" element={<Ranking><Sidebar /></Ranking>} />
       <Route path="/login" element={<Login><Sidebar /></Login>} />
       <Route path="/signup" element={<Signup />} />
-      <Route path="/UserProfile" element={<Profile><Sidebar /></Profile>} />
+      <Route path="/profile" element={<Profile><Sidebar /></Profile>} />
       <Route path="/create-thread" element={<PrivateRoute element={<CreateThread />} />} />
     </Routes>
   );
