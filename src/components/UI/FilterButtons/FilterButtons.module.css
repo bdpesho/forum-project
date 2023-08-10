@@ -1,0 +1,23 @@
+.FilterButtons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.FilterButtons__btn {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 12px;
+  border-radius: 20px;
+  padding: 7px;
+  border: none;
+  cursor: pointer;
+  color: #808080;
+  background-color: #eaeaea;
+}
+
+.FilterButtons__btn:active {
+  color: #fff;
+  background-color: #1782fd;
+}

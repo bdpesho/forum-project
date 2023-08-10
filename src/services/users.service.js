@@ -20,7 +20,8 @@ export const createUserHandle = (username, uid, email, firstName, lastName) => {
     lastName,
     statistics: {
       threads: 0,
-      comments: 0
+      comments: 0,
+      likes: 0
       // Add other initial statistics fields as needed
     }
   };

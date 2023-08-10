@@ -1,10 +1,10 @@
-import { ref, push, get, set, update } from 'firebase/database'; // query, equalTo, orderByChild,
+import { ref, push, get, set, update, query, orderByChild, limitToLast } from 'firebase/database'; // query, equalTo, orderByChild,
 import { db } from '../config/firebase-config';
 import { getUserData } from './users.service';
 
 
 export const getThreadById = (id) => {
-
+    console.log(id)
     return get(ref(db, `threads/${id}`))
       .then(result => {
         if (!result.exists()) {
@@ -69,10 +69,27 @@ export const addThread = async (
       updateUserThreads[`/users/${userName}/statistics/threads`] = userStatistics.threads + 1;
       
       await update(ref(db), updateUserThreads);
-  
+
       return getThreadById(newThreadKey); // Assuming getThreadById returns a promise
     } catch (error) {
       console.error('Error adding thread:', error);
       throw error;
     }
+  };
+
+  export const getAllThreads = async () => {
+    const threadsRef = ref(db, 'threads');
+    const threadsQuery = query(threadsRef, orderByChild('createdOn'), limitToLast(5)); // Adjust the query as needed
+  
+    const snapshot = await get(threadsQuery);
+    const threads = [];
+  
+    if (snapshot.exists()) {
+      snapshot.forEach((childSnapshot) => {
+        const thread = childSnapshot.val();
+        threads.push(thread);
+      });
+    }
+  
+    return threads;
   };

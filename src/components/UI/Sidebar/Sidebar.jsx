@@ -3,12 +3,15 @@ import cl from './Sidebar.module.css';
 import { logoutUser } from '../../../services/auth.service';
 import { useContext } from 'react';
 import { AuthContext } from '../../../context/context';
+import { AppContext } from '../../../context/appContext';
 import ListIcon from '@mui/icons-material/List';
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 
+
 const Sidebar = () => {
   const { user, setAuthState } = useContext(AuthContext);
+  const { setAppState } = useContext(AppContext)
 
   const onLogout = () => {
     logoutUser().then(() => {
@@ -16,6 +19,10 @@ const Sidebar = () => {
         user: null,
         userData: null,
       });
+      setAppState((prevState) => ({
+        ...prevState,
+        showCreateThread: false,
+      }));
     });
   };
 
