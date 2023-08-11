@@ -6,6 +6,7 @@ import Profile from '../../views/Profile/Profile';
 import Signup from '../../views/Signup/Signup';
 import Ranking from '../../views/Ranking/Ranking';
 import Login from '../../views/Login/Login'
+import UserProfile from '../../views/UserProfile/UserProfile';
 import CreateThread from '../../views/Threads/CreateThread';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../config/firebase-config';

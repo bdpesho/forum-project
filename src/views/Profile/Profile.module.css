@@ -1,6 +1,30 @@
 .Profile {
   display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
   padding: 25px;
   width: 100%;
   height: 100%;
+}
+
+.Profile h4 {
+  text-align: center; /* Center the "Update Profile" text */
+}
+
+.Profile form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.Profile form > button {
+  align-self: center; /* Center the button horizontally */
+  margin-top: 20px; /* Add some space above the button */
+}
+
+.ButtonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
 }
